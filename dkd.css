@@ -1,0 +1,7 @@
+.dkd {
+	border: 1px var(--focus) solid;
+	border-radius: 6px;
+}
+.pre {
+	white-space: pre;
+}

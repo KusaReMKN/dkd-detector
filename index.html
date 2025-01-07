@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デフォ子可愛いよデフォ子型文字列検出器</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="./dkd.css">
+<script src="./dkd.js" defer></script>
+</head>
+<body>
+<header>
+<h1>デフォ子可愛いよデフォ子型文字列検出器</h1>
+</header>
+<aside>
+<blockquote cite="https://www.nicovideo.jp/watch/sm8185003">
+うわぁ やだなぁ
+</blockquote>
+</aside>
+<main>
+<section>
+<h2>なに？</h2>
+<p>
+<b>デフォ子可愛いよデフォ子型文字列</b>とは、「3 つの部分に分割したとき、分割された文字列の最初の部分と最後の部分とが一致するような文字列」のことです。
+厳密には、拡張正規表現 <code>(.+).+\1</code> にマッチする文字列のことです。
+</p>
+<p>
+例えば、「デフォ子可愛いよデフォ子」や「ダンスロボットダンス」はデフォ子可愛いよデフォ子型文字列です。
+「デフォ子・可愛いよ・デフォ子」や「ダンス・ロボット・ダンス」のように分割することで、分割された文字列の最初の部分と最後の部分とを一致させることができます。
+「ゴママヨ」はどのように分割しても、分割された最初の部分と最後の部分とを一致させられないため、デフォ子可愛いよデフォ子型文字列ではありません。
+</p>
+<p>
+ところで、拡張正規表現 <code>(.*).*\1</code> にマッチする文字列もデフォ子可愛いよデフォ子型文字列に含めるほうが「美しい」と思います。
+これは空文字列⸺空文字列と空文字列と空文字列とに分けられ、最初と最後とが一致する⸺を含むからです。
+しかし、これを含めると途端に世界は彩りを失います。
+</p>
+</section>
+<section>
+<h2>で？</h2>
+<p>
+Unix な世界にいて、デフォ子可愛いよデフォ子型文字列を探し出すには、以下のコマンドが便利です。
+</p>
+<pre><code>grep -E '(.+).+\1'</code></pre>
+<p>
+ANSI エスケープシーケンスが使えるような端末で、デフォ子可愛いよデフォ子型文字列を派手に表示するには以下のコマンドが便利です。
+このコマンドには互換性がありません（POSIX で規定されていない <code>\x1B</code> を利用しているためです）。
+この代わりに <kbd><kbd>Ctrl</kbd>+<kbd>V</kbd></kbd>, <kbd><kbd>Ctrl</kbd>+<kbd>[</kbd></kbd> を押下するなどして直接 ESC の文字（ASCII コード十六進表記で 0x1B）を挿入することもできます。
+</p>
+<pre><code>sed -E 's/(.+).+\1/\x1B[7m&amp;\x1B[m/g'</code></pre>
+</section>
+<section>
+<h2>ん？ じゃあ これで終わり？</h2>
+<noscript>
+<p>
+このセクションの内容は JavaScript を利用します。
+お使いのブラウザは JavaScript に対応していないか、JavaScript が無効化されているようです。
+このセクションの内容を正しく動作させるために、最新のブラウザを利用するか、JavaScript を有効化してください。
+</p>
+</noscript>
+<p>
+以下の入力欄に文字列を入力して「検索」ボタンを押下すると、デフォ子可愛いよデフォ子型文字列を探し出します。
+</p>
+<form id="formMain">
+<fieldset>
+<legend>デフォ子可愛いよデフォ子型文字列を探し出す</legend>
+<textarea id="textSource">
+胃が痛い（いがいたい）の「い」率は 60% です。
+人生はそう上手くいかないものです。
+</textarea>
+<button>検索</button>
+</fieldset>
+</form>
+<section>
+<h3>検索結果</h3>
+<output id="outResult" class="pre">
+検索結果がここに表示されます。
+</output>
+</section>
+</section>
+<hr>
+<section>
+<h2>場所は？</h2>
+<ul>
+<li>inaphon.
+	<a href="https://www.nicovideo.jp/watch/sm8185003">ショートムービー「デフォ子の部屋」（UTAU×MMD）</a>.
+	ニコニコ動画.
+	2009-09-10,
+	(Accessed 2025-01-07).</li>
+<li>ナユタン星人.
+	<a href="https://www.nicovideo.jp/watch/sm30177801">ダンスロボットダンス / 初音ミク</a>.
+	ニコニコ動画.
+	2016-12-06,
+	(Accessed 2025-01-07).</li>
+<li>KusaReMKN.
+	<a href="https://x.com/KusaReMKN/status/1876568306007847152">厳密ではない正規表現（雰囲気で伝われ！）/\(.*\).*\1/ にマッチする文字列を「デフォ子かわいいよデフォ子型文字列」とか「ダンスロボットダンス型文字列」とかと呼びませんか？ ちなみに文字列 ゴママヨ は要件を満たしません</a>.
+	X.
+	2025-01-07.</li>
+</ul>
+</section>
+</main>
+<footer>
+<small>
+Copyright &copy; 2025 KusaReMKN.
+</small>
+</footer>
+</body>
+</html>
