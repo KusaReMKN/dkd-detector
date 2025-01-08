@@ -5,7 +5,7 @@ formMain.addEventListener('submit', e => {
 
 	outResult.parentNode.replaceChild(outResult.cloneNode(false), outResult);
 
-	const s = textSource.value;
+	const s = textSource.value.normalize();
 	const matches = s.matchAll(/(.+).+\1/g);
 	let last = 0;
 	for (const match of matches) {
